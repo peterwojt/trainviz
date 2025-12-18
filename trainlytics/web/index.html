@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Live Data</h1>
+<pre id="data"></pre>
+
+<script>
+const ws = new WebSocket("ws://localhost:8000/ws");
+
+ws.onmessage = (event) => {
+  document.getElementById("data").textContent =
+    JSON.stringify(JSON.parse(event.data), null, 2);
+};
+</script>
+</body>
+</html>

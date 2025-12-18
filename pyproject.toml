@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trainlytics"
+version = "0.1.0"
+description = "Python package for visualizing AI training in the browser"
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["dashboard", "websocket", "fastapi", "live-update"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "requests",
+    "websockets"
+]
+
+[tool.setuptools.package-data]
+trainlytics = ["web/*"]
