@@ -1,28 +1,23 @@
+from collections import defaultdict
 import asyncio
-from threading import Lock
 
-class AppState:
+class State:
     def __init__(self):
-        self.data = {}
+        self.data = defaultdict(list)
         self.connections = set()
-        self.lock = Lock()
 
-    async def broadcast(self):
-        dead = set()
-        for ws in self.connections:
-            try:
-                await ws.send_json(self.data)
-            except:
-                dead.add(ws)
-        self.connections -= dead
+STATE = State()
 
-STATE = AppState()
+async def broadcast():
+    for ws in STATE.connections:
+        await ws.send_json(STATE.data)
 
+#TODO: Add the ability to downsample the amount of data being displayed
+#TODO: Add the ability to only keep a fixed amount of data in memory
 def update_value(key, value):
-    with STATE.lock:
-        STATE.data[key] = value
+    STATE.data[key].append(value)
     try:
         loop = asyncio.get_running_loop()
-        loop.create_task(STATE.broadcast())
+        loop.create_task(broadcast())
     except RuntimeError:
-        asyncio.run(STATE.broadcast())
+        asyncio.run(broadcast())

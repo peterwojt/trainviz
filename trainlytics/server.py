@@ -19,3 +19,4 @@ def start():
     thread = threading.Thread(target=_run, daemon=True)
     thread.start()
     _started = True
+    print("TrainLytics server started at http://localhost:8000")
