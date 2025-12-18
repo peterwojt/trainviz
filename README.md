@@ -1,2 +1,4 @@
-# trainlytics
-Python package for visualizing AI training in the browser
+# Trainlytics
+Trainlytics is a python package for visualizing AI training in the browser
+
+![Alt text](example.png)
