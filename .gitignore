@@ -4,3 +4,4 @@ __pycache__/
 trainlytics.egg-info/
 build/
 .pytest_cache/
+dist/

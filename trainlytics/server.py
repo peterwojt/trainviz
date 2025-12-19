@@ -13,10 +13,13 @@ def _run():
     )
 
 def start():
+    """
+    Launch the Trainlytics server.
+    """
     global _started
     if _started:
         return
     thread = threading.Thread(target=_run, daemon=True)
     thread.start()
     _started = True
-    print("TrainLytics server started at http://localhost:8000")
+    print("Trainlytics started\nView training progress at http://localhost:8000")

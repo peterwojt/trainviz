@@ -14,9 +14,21 @@ async def broadcast():
 
 buffer = []
 
-#TODO: Add the ability to downsample the amount of data being displayed
-#TODO: Add the ability to only keep a fixed amount of data in memory
-def update_value(key, value, sample_rate=1, sliding_window=None):
+def update_value(key: str, value, sample_rate=1, sliding_window=None):
+    """
+    Update a tracked metric.
+
+    Parameters
+    ----------
+    key : str
+        Name of the metric (e.g. "loss", "accuracy").
+    value : float
+        New value to record.
+    sample_rate : int, optional
+        Aggregate every N values before storing.
+    window : int, optional
+        Sliding window size to keep in memory.
+    """
     if sample_rate > 1:
         buffer.append(value)
         if len(buffer) >= sample_rate:
