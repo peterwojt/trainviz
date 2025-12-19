@@ -1,0 +1,12 @@
+site_name: Trainviz
+site_url: https://peterwojt.github.io/trainviz/
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - API Reference: api.md
+  - Contributing: contributing.md
+  - License: license.md
