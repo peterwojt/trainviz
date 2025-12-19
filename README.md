@@ -33,5 +33,4 @@ You can begin updating values on the website by running
 tv.update_value("loss", loss_value)
 ```
 
-View full documentation  
-[here](https://peterwojt.github.io/trainviz/)  
+View full documentation [here](https://peterwojt.github.io/trainviz/).
