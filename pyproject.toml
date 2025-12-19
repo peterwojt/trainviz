@@ -7,11 +7,13 @@ name = "trainviz"
 version = "0.1.0"
 description = "Python package for visualizing AI training in the browser"
 readme = "README.md"
+license = { text = "Trainviz License – Non-Commercial Use Only (2025)" }
 requires-python = ">=3.9"
 keywords = ["dashboard", "websocket", "fastapi", "live-update"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
+    "License :: Other/Proprietary License"
 ]
 
 dependencies = [
@@ -27,5 +29,8 @@ dev = [
     "websockets"
 ]
 
+[project.scripts]
+trainviz = "trainviz.server:start"
+
 [tool.setuptools.package-data]
-trainlviz = ["web/*"]
+trainviz = ["web/*"]
