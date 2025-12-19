@@ -1,1 +1,1 @@
-recursive-include trainlytics/web *
+recursive-include trainviz/web *

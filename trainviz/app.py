@@ -3,7 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 from .state import STATE
 
-app = FastAPI(title="Trainlytics Dashboard")
+app = FastAPI(title="Trainviz Dashboard")
 
 @app.websocket("/ws")
 async def websocket_endpoint(ws: WebSocket):

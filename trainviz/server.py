@@ -6,7 +6,7 @@ _started = False
 #TODO: make host and port configurable
 def _run():
     uvicorn.run(
-        "trainlytics.app:app",
+        "trainviz.app:app",
         host="127.0.0.1",
         port=8000,
         log_level="warning",
@@ -14,7 +14,7 @@ def _run():
 
 def start():
     """
-    Launch the Trainlytics server.
+    Launch the Trainviz server.
     """
     global _started
     if _started:
@@ -22,4 +22,4 @@ def start():
     thread = threading.Thread(target=_run, daemon=True)
     thread.start()
     _started = True
-    print("Trainlytics started\nView training progress at http://localhost:8000")
+    print("Trainviz started\nView training progress at http://localhost:8000")
