@@ -28,3 +28,6 @@ You can begin updating values on the website by running
 ```bash
 tv.update_value("loss", loss_value)
 ```
+
+View full documentation here 
+[Documentation](https://peterwojt.github.io/trainviz/)  
