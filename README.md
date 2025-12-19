@@ -16,7 +16,11 @@ python3 example.py
 This will start a Trainviz server. We can view it by navigating to ```localhost:8000``` in the browser.
 
 ## Usage
-Below is a guide to use the Trainviz python package with your AI training tech stack. Import the package by running 
+Below is a guide to use the Trainviz python package with your AI training tech stack. First, install the python package by running
+```bash
+pip install trainviz
+```
+Import the package by running 
 ```bash
 import trainviz as tv
 ``` 
@@ -29,5 +33,5 @@ You can begin updating values on the website by running
 tv.update_value("loss", loss_value)
 ```
 
-View full documentation here 
-[Documentation](https://peterwojt.github.io/trainviz/)  
+View full documentation  
+[here](https://peterwojt.github.io/trainviz/)  
